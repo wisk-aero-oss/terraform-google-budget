@@ -11,19 +11,12 @@ repos:
 - repo: https://github.com/antonbabenko/pre-commit-terraform
   rev: v1.100.0
   hooks:
-    #- id: infracost_breakdown
     - id: terraform_fmt
     - id: terraform_docs
     - id: terraform_validate
     - id: terraform_tflint
     - id: terraform_trivy
     - id: terraform_checkov
-    #- id: terrascan
-    #  args:
-    #  - --args=-"-non-recursive"
-    #  - --args="-v"
-    #  #- --args="-c .terrascan.toml"
-    #- id: tfupdate
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v6.0.0
   hooks:
@@ -37,16 +30,8 @@ repos:
     - id: mixed-line-ending
       args: [--fix=lf]
     - id: trailing-whitespace
+      exclude: \.md$
 - repo: https://github.com/gruntwork-io/pre-commit
   rev: v0.1.30
   hooks:
     - id: shellcheck
-    #- id: markdown-link-check
-# - repo: https://github.com/igorshubovych/markdownlint-cli
-#   rev: v0.23.2
-#   hooks:
-#     - id: markdownlint
-#       args: [
-#         "--config=.mdlrc"
-#       ]
-#default_stages: [commit, push]
